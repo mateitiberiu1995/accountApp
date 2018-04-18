@@ -7,7 +7,7 @@ public class AccountingSystem {
 	private static HashMap<String, Account> accountsList = new HashMap<String, Account>();
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		String answer;
+		/*String answer;
 		Scanner reader = new Scanner(System.in);
 		answer=reader.next();
 		while(!answer.equals("stop"))
@@ -22,9 +22,9 @@ public class AccountingSystem {
 				lastName=reader.next();
 				System.out.println("Write your account number: ");
 				accountNumber=reader.next();
-				if(!accountsList.containsKey(accountNumber))
+				if(add(firstName,lastName,accountNumber))
 				{
-					add(firstName,lastName,accountNumber);
+					System.out.println("account added");
 				}
 				else {
 					System.out.println("The account is already in System!");
@@ -45,26 +45,36 @@ public class AccountingSystem {
 			}
 			if(answer.equals("show"))
 			{
-				show();
+				for (String accountNumber: accountsList.keySet()){
+
+			        System.out.println(show(accountNumber));
+				} 
 			}
 			answer=reader.next();
 		}
 		
-		reader.close();
+		reader.close();*/
 
 	}
-	public static void add(String firstName,String lastName,String accountNumber)
+	public static boolean add(String firstName,String lastName,String accountNumber)
 	{
-		Account Person = new Account(firstName,lastName,accountNumber);
-		accountsList.put(accountNumber,Person);
+		if(!accountsList.containsKey(accountNumber))
+		{
+			Account Person = new Account(firstName,lastName,accountNumber);
+			accountsList.put(accountNumber,Person);
+			return true;
+		}
+		else {
+			return false;
+		}
+		
 		
 	}
-	public static void show()
+	public static String show(String accountNumber)
 	{
-		for (String accountNumber: accountsList.keySet()){
 
-	        System.out.println(accountsList.get(accountNumber).getFirst_name()+ " " + accountsList.get(accountNumber).getLast_name()+ " " + accountsList.get(accountNumber).getAccount_number());
-		} 
+	        return (accountsList.get(accountNumber).getFirst_name()+ " " + accountsList.get(accountNumber).getLast_name()+ " " + accountsList.get(accountNumber).getAccount_number());
+
 	}
 
 }
