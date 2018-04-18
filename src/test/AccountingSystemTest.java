@@ -25,11 +25,5 @@ public class AccountingSystemTest {
 		assertEquals("nidhesh matei 123456", oe.show("123456"));
 	}
 	
-	@Test
-	public void remove()
-	{
-		//assertEquals(true, oe.remove("023456"));
-		//assertEquals(false, oe.remove("023456"));
-	}
 
 }
