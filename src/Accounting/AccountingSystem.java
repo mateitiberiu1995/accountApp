@@ -76,5 +76,17 @@ public class AccountingSystem {
 	        return (accountsList.get(accountNumber).getFirst_name()+ " " + accountsList.get(accountNumber).getLast_name()+ " " + accountsList.get(accountNumber).getAccount_number());
 
 	}
+	public static boolean remove(String accountNumber)
+	{
+		if(accountsList.containsKey(accountNumber))
+		{
+			accountsList.remove(accountNumber);
+			return true;
+		}
+		else
+			return false;
+	}
+	
+	
 
 }

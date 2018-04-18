@@ -24,5 +24,12 @@ public class AccountingSystemTest {
 		assertEquals("callum matei 223456", oe.show("223456"));
 		assertEquals("nidhesh matei 123456", oe.show("123456"));
 	}
+	
+	@Test
+	public void remove()
+	{
+		//assertEquals(true, oe.remove("023456"));
+		//assertEquals(false, oe.remove("023456"));
+	}
 
 }
