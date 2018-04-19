@@ -30,6 +30,10 @@ public class AccountingSystemTest {
 		oe.add("tiberiu","matei","022456");
 		oe.add("tiberiu","matei","023356");
 		assertEquals(4, oe.searchFirstName("tiberiu"));
+		oe.add("callum","matei","113456");
+		oe.add("callum","matei","122456");
+		oe.add("callum","matei","123356");
+		assertEquals(4, oe.searchFirstName("callum"));
 		
 	}
 	
