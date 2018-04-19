@@ -24,6 +24,14 @@ public class AccountingSystemTest {
 		assertEquals("callum matei 223456", oe.show("223456"));
 		assertEquals("nidhesh matei 123456", oe.show("123456"));
 	}
+	@Test
+	public void searchPerson() {
+		oe.add("tiberiu","matei","013456");
+		oe.add("tiberiu","matei","022456");
+		oe.add("tiberiu","matei","023356");
+		assertEquals(4, oe.searchFirstName("tiberiu"));
+		
+	}
 	
 
 }
