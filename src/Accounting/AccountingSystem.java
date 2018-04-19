@@ -1,14 +1,6 @@
 package Accounting;
 
-import static org.junit.Assert.assertEquals;
-
-import java.awt.List;
-import java.io.File;
-import java.io.IOException;
 import java.util.HashMap;
-import java.util.Optional;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class AccountingSystem {
 	private static HashMap<String, Account> accountsList = new HashMap<String, Account>();
