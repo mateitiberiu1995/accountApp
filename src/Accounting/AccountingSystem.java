@@ -2,9 +2,11 @@ package Accounting;
 
 import static org.junit.Assert.assertEquals;
 
+import java.awt.List;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Optional;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -63,7 +65,7 @@ public class AccountingSystem {
 	}
 	public static int searchFirstName(String firstName)
 	{
-		int counter=0;
+		/*int counter=0;
 		for(HashMap.Entry<String, Account> entry : accountsList.entrySet())
 		{
 			if(firstName==accountsList.get(entry.getKey()).getFirst_name())
@@ -71,7 +73,24 @@ public class AccountingSystem {
 				counter++;
 			}
 		}
-		return counter;
+		return counter;*/
+		
+		return (int) accountsList.values().stream().filter(something -> something.getFirst_name().equals(firstName)).count();
+		
+	}
+	public static boolean removeAccount(String accountNumber)
+	{
+		boolean countExists =accountsList.containsKey(accountNumber);
+		if(countExists)
+		{
+			accountsList.remove(accountNumber);
+			return true;
+		}
+		return false;
+	}
+	public static HashMap<String, Account> getAccountMap()
+	{
+		return accountsList;
 	}
 	
 	
